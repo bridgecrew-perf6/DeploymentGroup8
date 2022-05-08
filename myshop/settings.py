@@ -136,9 +136,9 @@ CART_SESSION_ID = 'cart'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Braintree settings - replace with your credentials after signing up for braintree account
-BRAINTREE_MERCHANT_ID = 'Merchant ID'  # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'Public Key'   # Public Key
-BRAINTREE_PRIVATE_KEY = 'Private key'  # Private key
+BRAINTREE_MERCHANT_ID = 'hs5cq2z9t2598mvh'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'nxh8vcm2krmkg23v'   # Public Key
+BRAINTREE_PRIVATE_KEY = 'bbdd38073d8ab94aed30007079c15000'  # Private key
 
 
 Configuration.configure(

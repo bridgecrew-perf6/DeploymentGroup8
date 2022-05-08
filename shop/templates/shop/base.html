@@ -14,6 +14,20 @@
 Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search products"/>
 <input type="submit" name="submit" value="Search"/>
 </form>
+
+  <div id="account_info">
+{% if request.user.is_authenticated %}
+<h5>Hi, {{ request.user.username.title }}
+    <span>
+        <button type="submit" onclick="window.location.href='{% url 'accounts:logout_user'%}'">log out</button>
+    </span>
+</h5>
+{% else %}
+  <button onclick="window.location.href='{% url "accounts:register_user" %}'">sign up</button>
+  <button onclick="window.location.href='{% url "accounts:login_user" %}'">log in</button>
+{% endif %}
+</div>
+
   <div id="subheader">
     <div class="cart">
       {% with total_items=cart|length %}

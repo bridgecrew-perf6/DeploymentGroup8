@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
+    'accounts.apps.signUpConfig'
 
 ]
 
@@ -117,8 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
 TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en-us'
 
-
-
 USE_I18N = True
 
 USE_TZ = True
@@ -148,3 +147,5 @@ Configuration.configure(
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
 )
+
+LOGIN_REDIRECT_URL = '/'

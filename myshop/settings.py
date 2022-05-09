@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-0ozmq)^ncdi3cs5@eq=af@n&p%r=#9pyuqc7h8yuk+=l*ivq)i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -136,9 +136,9 @@ CART_SESSION_ID = 'cart'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Braintree settings - replace with your credentials after signing up for braintree account
-BRAINTREE_MERCHANT_ID = 'hs5cq2z9t2598mvh'  # Merchant ID
-BRAINTREE_PUBLIC_KEY = 'nxh8vcm2krmkg23v'   # Public Key
-BRAINTREE_PRIVATE_KEY = 'bbdd38073d8ab94aed30007079c15000'  # Private key
+BRAINTREE_MERCHANT_ID = 'Merchant ID'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'Public Key'   # Public Key
+BRAINTREE_PRIVATE_KEY = 'Private key'  # Private key
 
 
 Configuration.configure(

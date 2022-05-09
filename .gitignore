@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 *.pyc
 venv
 __pycache__
 local_settings.py
 .idea
 .DS_Store
-
-db.sqlite3
->>>>>>> 2b73bafc20294992534a6698737befcaea4dbc6f

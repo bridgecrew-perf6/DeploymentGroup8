@@ -50,3 +50,13 @@ def search(request):
         products = Product.objects.all()
         products = products.filter(description__icontains=query)
     return render(request, 'shop/product/list.html', {'products': products})
+def filter(request):
+    if request.method == 'GET':
+        query = request.GET.get('q1')
+        query2 = float(query)
+
+    if query is not None:
+        products = Product.objects.all()
+        products = products.filter(price__lt=query2 )
+
+    return render(request, 'shop/product/list.html', {'products': products})

@@ -24,11 +24,13 @@ Max Price <input type="number" name="q1" value="{{request.GET.q1}}" placeholder=
 <h5>Hi, {{ request.user.username.title }}
     <span>
         <button type="submit" onclick="window.location.href='{% url 'accounts:logout_user'%}'">log out</button>
+        <button onclick="window.location.href='{% url "accounts:review" %}'">reveiw</button>
     </span>
 </h5>
 {% else %}
   <button onclick="window.location.href='{% url "accounts:register_user" %}'">sign up</button>
   <button onclick="window.location.href='{% url "accounts:login_user" %}'">log in</button>
+
 {% endif %}
 </div>
 

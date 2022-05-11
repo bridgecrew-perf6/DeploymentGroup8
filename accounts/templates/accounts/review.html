@@ -1,0 +1,35 @@
+{% extends 'shop/base.html'%}
+{% load static %}
+
+{% block title %} Review {% endblock title %}
+
+
+{% block content %}
+    {% if message %}
+    {{ message }}
+    {% endif %}
+    <form action="{% url 'accounts:review' %}" method="post" class="form-report">
+    {% csrf_token %}
+        <label>
+            <span>Contact:</span>
+            <select name="select2" class="select2">
+                <option value="Email">Email</option>
+                <option value="Phone number">Phone number</option>
+            </select>
+            <input type="text" placeholder="" name="contact">
+        </label>
+
+    <div>
+        <label>
+            <span>Message:</span>
+            <textarea id="Message" name="message" placeholder=""></textarea>
+        </label>
+
+        <label>
+            <input type="submit" class="button" value="Send">
+        </label>
+    </div>
+    </form>
+
+
+{% endblock content %}

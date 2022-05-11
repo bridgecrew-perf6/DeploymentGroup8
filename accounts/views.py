@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from myshop import settings
 from django.contrib import messages
 from django.contrib.auth.models import User
-from accounts.models import Profile
+from accounts.models import Profile, Review
 
 
 def loginUser(request):
@@ -15,7 +15,7 @@ def loginUser(request):
             login(request, user)
             return redirect(settings.LOGIN_REDIRECT_URL)
         else:
-            return render(request, 'accounts/logIn.html', {'errors': 'invalid input'})
+            return render(request, 'accounts/logIn.html', {'errors': 'Your username and password didn \'t match.Please try again.'})
     else:
         return render(request, 'accounts/logIn.html')
 
@@ -40,5 +40,16 @@ def registerUser(request):
         return redirect(settings.LOGIN_REDIRECT_URL)
     else:
         return render(request, 'accounts/signup.html')
+
+
+def review(request):
+    if not request.user.is_authenticated:
+        return render(request, 'accounts/logIn.html', {'errors': 'Please log in to review! '})
+    if request.method == 'POST':
+        Review.objects.create(user=request.user, contact=request.POST['contact'], message=request.POST['message'], contact_type=request.POST['select2'])
+        return render(request, 'accounts/review.html', {"message":"Your review has been submitted!"})
+    return render(request, "accounts/review.html")
+
+
 
 
